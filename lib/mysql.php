@@ -87,7 +87,6 @@ namespace {
                     return false;
                 }
                 MySQL::$last_connection = $conn;
-                $conn->hash = $hash; // @phpstan-ignore-line
                 MySQL::$connections[$hash] = array('refcount' => 1, 'conn' => $conn);
 
                 return $conn;
@@ -114,8 +113,6 @@ namespace {
                     return false;
                 }
                 // @codeCoverageIgnoreEnd
-
-                $conn->hash = $hash; // @phpstan-ignore-line
                 MySQL::$connections[$hash] = array('refcount' => 1, 'conn' => $conn);
 
                 return $conn;
