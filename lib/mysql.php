@@ -626,7 +626,7 @@ namespace {
 
         function mysql_real_escape_string($unescapedString, mysqli $link = null)
         {
-            return mysqli_real_escape_string(MySQL::getConnection($link), $unescapedString);
+            return mysqli_real_escape_string(MySQL::getConnection($link), $unescapedString ?? '');
         }
 
         function mysql_stat(mysqli $link = null)
